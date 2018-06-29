@@ -5,7 +5,7 @@ _grafana_tag=$1
 # If the tag starts with v, treat this as a official release
 if echo "$_grafana_tag" | grep -q "^v"; then
 	_grafana_version=$(echo "${_grafana_tag}" | cut -d "v" -f 2)
-	_grafana_url="https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-${_grafana_version}.linux-amd64.tar.gz"
+	_grafana_url="https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-${_grafana_version}.linux-x64.tar.gz"
 	_docker_repo=${2:-grafana/grafana}
 else
 	_grafana_version=$_grafana_tag
